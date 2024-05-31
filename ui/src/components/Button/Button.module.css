@@ -1,0 +1,66 @@
+:root {
+	--button-color: #fff2;
+	--disabled: #333;
+}
+
+.button {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	background-color: var(--button-color);
+	border: 3px solid transparent;
+	outline: 2px solid transparent;
+	background-clip: padding-box;
+
+	margin: 2px;
+	padding: 10px 20px;
+
+	font-family: inherit;
+	font-weight: bold;
+	font-size: 16px;
+
+	color: var(--color, inherit);
+	fill: var(--color, inherit);
+
+	cursor: pointer;
+
+	border-radius: var(--border-radius);
+	transition: var(--transition);
+}
+
+.button:focus {
+	background-color: var(--button-color);
+	outline: 2px solid transparent;
+}
+
+.button:hover {
+	outline: 2px solid var(--button-color);
+}
+
+.button:focus-visible {
+	background-color: var(--button-color);
+	outline: 2px solid var(--link);
+}
+
+.button:active {
+	animation: pulse var(--transition) forwards;
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(0.95);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+.button:disabled {
+	background-color: var(--disabled);
+	color: red;
+}
